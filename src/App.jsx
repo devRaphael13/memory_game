@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 function App() {
     const [pokemon, setPokemon] = useState([]);
     const [score, setScore] = useState(0);
+    const [highScore, setHighScore] = useState(0);
 
     useEffect(() => {
         fetch("https://pokeapi.co/api/v2/pokemon?limit=20")
@@ -28,16 +29,27 @@ function App() {
     };
 
     const handleSelect = (e) => {
-        const name = e.target.textContent;
-        setScore(score + 1)
-        setPokemon(shuffle(pokemon.map((mon) => (name === mon.name ? { ...mon, selected: mon.selected + 1 } : mon))));
+        const monster = pokemon.filter((x) => x.name === e.target.textContent)[0];
+
+        if (monster.selected >= 1) {
+            setHighScore(highScore > score ? highScore : score);
+            setScore(0)
+            return
+        }
+        
+        setScore(score + 1);
+        setPokemon(shuffle(pokemon.map((mon) => (monster.name === mon.name ? { ...mon, selected: mon.selected + 1 } : mon))));
     };
 
     return (
         <main>
             <h1>Memory Game</h1>
             <section>
-                <h2>{score}</h2>
+                <div>
+                    <h2>Score: {score}</h2>
+                    <h2>HighScore: {highScore}</h2>
+                </div>
+
                 {pokemon.map((monster) => (
                     <button onClick={handleSelect} data-id={monster.id} key={monster.id}>
                         {monster.name}
