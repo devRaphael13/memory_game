@@ -33,10 +33,10 @@ function App() {
 
         if (monster.selected >= 1) {
             setHighScore(highScore > score ? highScore : score);
-            setScore(0)
-            return
+            setScore(0);
+            return;
         }
-        
+
         setScore(score + 1);
         setPokemon(shuffle(pokemon.map((mon) => (monster.name === mon.name ? { ...mon, selected: mon.selected + 1 } : mon))));
     };
@@ -44,12 +44,12 @@ function App() {
     return (
         <main>
             <h1>Memory Game</h1>
+            <div>
+                <h2>Score: {score}</h2>
+                <h2>HighScore: {highScore}</h2>
+            </div>
+            <small>INSTRUCTION: YOU CAN ONLY CHOOSE A POKEMON ONCE!!</small>
             <section>
-                <div>
-                    <h2>Score: {score}</h2>
-                    <h2>HighScore: {highScore}</h2>
-                </div>
-
                 {pokemon.map((monster) => (
                     <button onClick={handleSelect} data-id={monster.id} key={monster.id}>
                         {monster.name}

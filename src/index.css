@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: darkslategray;
+}
+
+body {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1057%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(174%2c 199%2c 187%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c549.977C104.961%2c546.426%2c203.939%2c511.356%2c294.959%2c458.966C389.623%2c404.479%2c504.224%2c348.739%2c532.783%2c243.314C561.33%2c137.936%2c442.648%2c46.262%2c436.285%2c-62.728C428.959%2c-188.214%2c552.31%2c-316.563%2c493.61%2c-427.715C437.035%2c-534.843%2c288.873%2c-569.748%2c167.733%2c-571.246C57.066%2c-572.615%2c-24.782%2c-475.736%2c-127.846%2c-435.402C-218.971%2c-399.74%2c-338.567%2c-422.844%2c-401.957%2c-348.297C-465.332%2c-273.768%2c-438.458%2c-161.496%2c-443.822%2c-63.812C-448.697%2c24.965%2c-453.469%2c110.989%2c-431.911%2c197.247C-406.495%2c298.943%2c-389.259%2c413.061%2c-308.07%2c479.366C-224.784%2c547.383%2c-107.47%2c553.613%2c0%2c549.977' fill='%2384aa98'%3e%3c/path%3e%3cpath d='M1440 1100.466C1544.292 1111.318 1653.028 1085.255 1738.795 1024.934 1822.981 965.725 1879.349 872.212 1905.92 772.779 1930.272 681.649 1894.821 589.893 1879.938 496.746 1865.321 405.259 1875.876 304.69100000000003 1819.396 231.25099999999998 1761.8809999999999 156.466 1665.536 126.76400000000001 1574.998 100.238 1484.504 73.72500000000002 1385.514 41.932000000000016 1298.674 78.68700000000001 1213.655 114.67099999999999 1187.154 218.76600000000002 1127.828 289.501 1069.749 358.749 968.742 400.962 953.6410000000001 490.072 938.5219999999999 579.292 1013.321 655.384 1051.958 737.213 1090.031 817.848 1113.564 905.7080000000001 1178.663 966.648 1251.588 1034.915 1340.644 1090.127 1440 1100.466' fill='%23d8e4de'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1057'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+}
+
+main {
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid #daa520;
+    bottom: -10%;
+    left: 45%;
+    width: 4rem;
+}
+
+small {
+    font-style: italic;
+}
+
+main>div {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+
+button {
+    padding: 2rem 2.5rem;
+    color: white;
+    border-radius: 0.25rem;
+    background: darkslategray;
+    text-transform: capitalize;
+    border: none;
+    font-size: 1.5rem;
+    font-family: inherit;
+}
